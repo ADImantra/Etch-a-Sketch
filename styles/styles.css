@@ -1,0 +1,11 @@
+.sketch-space {
+    border: 2px solid black;
+    display: flex;
+}
+
+.sketch-square {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 110px;
+    flex: 1;
+}
