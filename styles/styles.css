@@ -1,11 +1,18 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sketch-space {
     border: 2px solid black;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .sketch-square {
-    border: 2px solid black;
-    margin: 5px;
-    padding: 110px;
+    padding: 5px;
     flex: 1;
 }

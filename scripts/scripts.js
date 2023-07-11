@@ -1,24 +1,90 @@
+
+const gridSpace = document.querySelector(`body`)
 const sketchSpace = document.querySelector(`.sketch-space`);
 const startButton = document.querySelector(`.make-a-book`);
+const color = document.getElementById(`color-select`);
 
-startButton.addEventListener(`click`, () => {
-    startButton.remove();
-});
+document.addEventListener(`DOMContentLoaded`, initialize);
+startButton.addEventListener(`click`, painter)
 
-document.addEventListener(`DOMContentLoaded`, () => {
-    console.log(`dom content loaded`)
-    for (let j =0; j < 4; j++) {
+let mDown = false;
+
+gridSpace.addEventListener(`mousedown`, () => {
+    mDown = true;
+})
+
+gridSpace.addEventListener(`mouseup` , () => {
+    mDown = false;
+})
+
+
+//just a set up screen
+function initialize() {
+    sketchSpace.remove();
+    color.value = `black`;
+}
+
+//actually builds grid and allows for "painting"
+function painter() {
+    //builds the box
+    gridSpace.appendChild(sketchSpace)
+    for (let j =0; j < 32; j++) {
+
         col = document.createElement(`div`);
-        col.setAttribute(`class`, `sketch-col`)
-        sketchSpace.appendChild(col)
-        console.log(`it made a row`);
-        for (let i = 0; i < 4; i++) {
+        col.setAttribute(`class`, `sketch-col`);
+        sketchSpace.appendChild(col);
+
+        for (let i = 0; i < 32; i++) {
+
             sqr = document.createElement(`div`);
             sqr.setAttribute(`class`, `sketch-square`);
             sqr.setAttribute(`id`, `sqr${j}:${i}`);
-            col.appendChild(sqr)
-            console.log(`it made a square`);
+            col.appendChild(sqr);
+
+        };
+    };
+
+    //creates the sketchpad object
+    const squares = document.querySelectorAll(`.sketch-square`)
+
+    /*
+    using the on-click/hold listener above, this make's a 
+    paintbrush effect by allowing the user to "paint" with the 
+    mouse held down.
+    */
+    squares.forEach(square => square.addEventListener(`mouseover` , () => {
+        if (mDown === true) {
+            console.log(`paintbrush`)
+            square.style.backgroundColor = color.value;
         }
-    }
-});
+
+    }));
+};
+
+/*
+
+small square
+2x2sqr = 4x80px
+4x4sqr = 16x20px
+8x8sqr = 32x5px
+
+
+big square
+1x1sqr = 1x640px
+2x2sqr = 4x160px
+4x4sqr = 16x40px
+8x8sqr = 64x10px
+80x80sqr = 640x1px
+
+really big square
+1x1sqr = 1x1024px
+2x2sqr = 4x256px
+4x4sqr = 16x64px
+8x8sqr = 64x16px
+16x16sqr = 1024x1pxsqr
+
+*/
+
+
+
 
