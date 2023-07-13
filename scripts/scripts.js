@@ -1,13 +1,14 @@
 
-const gridSpace = document.querySelector(`body`)
+
+
+const gridSpace = document.querySelector(`.sketch-pad`)
 const sketchSpace = document.querySelector(`.sketch-space`);
 const startButton = document.querySelector(`.make-a-book`);
 const color = document.getElementById(`color-select`);
+const sizeSelect = document.querySelectorAll(`input[name="size-select"]`)
 
 document.addEventListener(`DOMContentLoaded`, initialize);
 startButton.addEventListener(`click`, painter)
-
-let mDown = false;
 
 gridSpace.addEventListener(`mousedown`, () => {
     mDown = true;
@@ -17,6 +18,26 @@ gridSpace.addEventListener(`mouseup` , () => {
     mDown = false;
 })
 
+let mDown = false;
+
+function getPalleteSize() {
+    for (const sizeButton of sizeSelect) {
+        if (sizeButton.checked) {
+            if (sizeButton.value === `small`) {
+                console.log(sizeButton.value)
+                return 16;
+            } else if (sizeButton.value === `medium`) {
+                console.log(sizeButton.value)
+                return 32;
+            } else {
+                console.log(sizeButton.value)
+                return 64;
+            };
+        };
+    };
+};
+
+
 
 //just a set up screen
 function initialize() {
@@ -24,17 +45,25 @@ function initialize() {
     color.value = `black`;
 }
 
+function palleteSetter(size) {
+    if (size === `small`) {
+        palleteSize = 32;
+        
+    }
+};
+
 //actually builds grid and allows for "painting"
 function painter() {
     //builds the box
-    gridSpace.appendChild(sketchSpace)
-    for (let j =0; j < 32; j++) {
+    gridSpace.appendChild(sketchSpace);
+    startButton.remove();
+    for (let j =0; j < getPalleteSize(); j++) {
 
         col = document.createElement(`div`);
         col.setAttribute(`class`, `sketch-col`);
         sketchSpace.appendChild(col);
 
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < getPalleteSize(); i++) {
 
             sqr = document.createElement(`div`);
             sqr.setAttribute(`class`, `sketch-square`);
@@ -60,6 +89,8 @@ function painter() {
 
     }));
 };
+
+
 
 /*
 

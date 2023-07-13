@@ -1,11 +1,33 @@
-body {
+* {
+    box-sizing: border-box;
+}
+
+.title-bar {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 25px;
+}
+
+.sketch-pad {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pallete {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 4px 2px #888888;
+    padding: 50px 10px;
 }
 
 .sketch-space {
     border: 2px solid black;
+    border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: flex-start;

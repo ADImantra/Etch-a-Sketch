@@ -7,14 +7,23 @@
         <title>Sketch-book</title>
     </head>
     <body>
-        <button class="make-a-book">Start?</button>
-        <form class="pallete">
-            <label for="color-select">Color</label><br>
-            <input type="color" id="color-select" name="color-select"><br>
-            <label for="size-select">Size?</label><br>
-            <input type="range" id="size-select" name="size-select"><br>
-        </form>
-        <div class="sketch-space"></div>
+        <div class="title-bar">
+            <h3>Painterly</h3>
+        </div>
+        <div class="sketch-pad">
+            <form class="pallete">
+                <label for="color-select">Color</label><br>
+                <input type="color" id="color-select" name="color-select"><br>
+                <input type="radio" id="size-select-small" name="size-select" value="small"><br>
+                <label for="size-select-small">Small Canvas</label><br>
+                <input type="radio" id="size-select-med" name="size-select" value="medium"><br>
+                <label for="size-select-med">Medium Canvas</label><br>
+                <input type="radio" id="size-select-large" name="size-select" value="large"><br>
+                <label for="size-select-large">Large Canvas</label><br>
+            </form>
+            <button class="make-a-book">Start?</button>
+            <div class="sketch-space"></div>
+        </div>
         <script src="scripts/scripts.js"></script>
     </body>
 </html>
