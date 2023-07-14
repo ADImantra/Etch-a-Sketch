@@ -8,26 +8,41 @@
     </head>
     <body>
         <div class="title-bar">
-            <h3>Painterly</h3>
+            <h1>p a i n t e r l y</h1>
         </div>
         <div class="sketch-pad">
             <form class="pallete">
                 <div class="color-selection">
-                    <label for="color-select">Color</label><br>
-                    <input type="color" id="color-select" name="color-select">
-                    <label for="randomizer">Rainbow?</label><br>
+                    <div class="container"> 
+                        <label for="color-select">c o l o r</label><br>
+                        <input type="color" id="color-select" name="color-select">
+                    </div>
+                    <div class="container">
+                        <label for="randomizer">r a i n b o w ?</label><br>
                     <input type="checkbox" id="randomizer" name="color-random" value="RAINBOW"><br>
+                    </div>
                 </div>
-                <input type="radio" id="size-select-small" name="size-select" value="small"><br>
-                <label for="size-select-small">Small Canvas</label><br>
-                <input type="radio" id="size-select-med" name="size-select" value="medium"><br>
-                <label for="size-select-med">Medium Canvas</label><br>
-                <input type="radio" id="size-select-large" name="size-select" value="large"><br>
-                <label for="size-select-large">Large Canvas</label><br>
+                <div class="size-select">
+                    <div class="container">
+                        <label for="size-select-large">l a r g e || c a n v a s </label><br>
+                        <input type="radio" id="size-select-large" name="size-select" value="large"><br>
+                    </div>
+                    <div class="container">
+                        <label for="size-select-med">m e d i u m || c a n v a s</label><br>
+                        <input type="radio" id="size-select-med" name="size-select" value="medium"><br>
+                    </div>
+                    <div class="container">
+                        <label for="size-select-small">s m a l l || c a n v a s</label><br>
+                    <input type="radio" id="size-select-small" name="size-select" value="small"><br>
+                    </div> 
+                </div>
             </form>
-            <button class="make-a-book">Start?</button>
+            <button class="make-a-book">b u i l d</button>
             <div class="sketch-space"></div>
         </div>
+        <footer class="accreditation">
+            <p><em>Copyright July 2023, Cameron S. Minty, made for The Odin Academy foundations course</em></p>
+        </footer>
         <script src="scripts/scripts.js"></script>
     </body>
 </html>

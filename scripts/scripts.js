@@ -81,10 +81,17 @@ function painter() {
     squares.forEach(square => square.addEventListener(`mouseover`, () => {
         if (mDown && rainbow.checked) {
             gridSpace.addEventListener(`mousemove`, () => {
-                let num = Math.floor(Math.random() * 11);
+                let num = Math.floor(Math.random() * 45);
                 let colorArr = [`#000000`, `#241f31`, `#3d3846`, `#5e5c64`, `#77767b`,
-                            `#9a9996`, `#c0bfbc`, `#c0bfbc`, `#deddda`, `#f6f5f4`,
-                            `#ffffff`];
+                                `#9a9996`, `#c0bfbc`, `#c0bfbc`, `#deddda`, `#f6f5f4`,
+                                `#ffffff`, `#63452c`, `#865e3c`, `#986a44`, `#b5835a`,
+                                `#cdab8f`, `#613583`, `#813d9c`, `#9141ac`, `#c061cb`, 
+                                `#dc8add`, `#a51d2d`, `#c01c28`, `#e01b24`, `#ed333b`, 
+                                `#f66151`, `#c64600`, `#e66100`, `#ff7800`, `#ffa348`, 
+                                `#ffbe6f`, `#e5a50a`, `#f5c211`, `#f6d32d`, `#f8e45c`, 
+                                `#f9f06b`, `#26a269`, `#2ec27e`, `#33d17a`, `#57e389`, 
+                                `#8ff0a4`, `#1a5fb4`, `#1c71d8`, `#3584e4`, `#62a0ea`,  
+                                `#99c1f1`];
                 square.style.backgroundColor = colorArr[num];
             });
         } else if (mDown && !(rainbow.checked)) {

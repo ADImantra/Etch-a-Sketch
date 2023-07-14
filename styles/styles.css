@@ -1,5 +1,25 @@
 * {
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #171738;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+button {
+    background-color: #9197AE;
+    border: 2px solid #9197AE;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
 }
 
 .title-bar {
@@ -7,6 +27,7 @@
     align-items: center;
     justify-content: center;
     margin: 25px;
+    color: #9197AE;
 }
 
 .sketch-pad {
@@ -19,27 +40,48 @@
     display: flex;
     flex-direction: column;
     margin: 100px 200px;
-    border: 1px solid #9a9996;
+    background-color: #9197AE;
+    border: 1px solid #9197AE;
     border-radius: 10px;
-    box-shadow: 2px 4px 2px #888888;
+    box-shadow: 2px 4px 2px #171738;
     padding: 50px 20px;
+    gap: 20px;
 }
 
 .color-selection {
     display: flex;
+    gap: 20px;
+    background-color: #9197AE;
+}
+
+.size-select {
+    display: flex;
+    flex-direction: column;
+    background-color: #9197AE;
 }
 
 .sketch-space {
-    border: 2px solid black;
+    border: 2px solid #9197AE;
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 0px 50px 0px 0px;
-    
+    background-color: #EFF6EE;
+    box-shadow: 2px 4px 2px #171738;
+
 }
 
 .sketch-square {
     padding: 5px;
     flex: 1;
+}
+
+.accreditation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5e5c64;
+    color: #9197AE;
+    margin-top: auto;
 }
